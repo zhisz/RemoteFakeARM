@@ -1,7 +1,7 @@
 .\objects\pack.o: Hardware\pack.c
 .\objects\pack.o: .\Start\stm32f10x.h
 .\objects\pack.o: .\Start\core_cm3.h
-.\objects\pack.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\pack.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\pack.o: .\Start\system_stm32f10x.h
 .\objects\pack.o: .\User\stm32f10x_conf.h
 .\objects\pack.o: .\Library\stm32f10x_adc.h

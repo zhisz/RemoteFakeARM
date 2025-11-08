@@ -1,7 +1,7 @@
 .\objects\nrf24l01.o: Hardware\NRF24L01.c
 .\objects\nrf24l01.o: .\Start\stm32f10x.h
 .\objects\nrf24l01.o: .\Start\core_cm3.h
-.\objects\nrf24l01.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\nrf24l01.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\nrf24l01.o: .\Start\system_stm32f10x.h
 .\objects\nrf24l01.o: .\User\stm32f10x_conf.h
 .\objects\nrf24l01.o: .\Library\stm32f10x_adc.h
