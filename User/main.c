@@ -6,7 +6,13 @@
 #include "pack.h"
 #include "filter.h"
 #include "stdio.h"
+#include "Key.h"
+#include "Timer.h"
 
+
+
+uint16_t Num1;
+uint16_t Num2;
 
 uint16_t ADC_value6[6];
 
@@ -35,9 +41,15 @@ int main(void)
 	NRF24L01_Init();
 	AD_Init();
 	Filter_InitAll();
+	Key_Init();
+	Timer_Init();
 	
 	
 	/*OLED显示静态字符串*/
+	
+	OLED_ShowNum(108, 0, Num1,1,OLED_6X8);
+	
+	
 	OLED_ShowString(0, 0, "T:00000-00000-0",OLED_6X8);		//格式为：T:发送成功计次-发送失败计次-发送标志位
 	OLED_ShowString(0, 8, "CH1 HEX:0000 Num:0000",OLED_6X8);
 	OLED_ShowString(0, 16, "CH2 HEX:0000 Num:0000",OLED_6X8);
@@ -66,6 +78,12 @@ int main(void)
 	{
 		
 		
+			/*示例3*/
+		if (Key_Check(KEY_1, KEY_SINGLE))
+		{
+			Num1 = Num1 ? 0:1;
+		}
+		OLED_ShowNum(108, 0, Num1,1,OLED_6X8);
 		
 //		printf("a");
 		 
@@ -173,5 +191,17 @@ int main(void)
 //			OLED_ShowString(0, 40, "  ",OLED_6X8);
 //			OLED_Update();
 //		}
+	}
+}
+
+
+
+void TIM2_IRQHandler(void)
+{
+	if (TIM_GetITStatus(TIM2, TIM_IT_Update) == SET)
+	{
+		Key_Tick();
+		TIM_ClearITPendingBit(TIM2, TIM_IT_Update);
+		
 	}
 }

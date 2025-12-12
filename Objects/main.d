@@ -37,3 +37,5 @@
 .\objects\main.o: .\Hardware\pack.h
 .\objects\main.o: .\Hardware\filter.h
 .\objects\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\main.o: .\Hardware\Key.h
+.\objects\main.o: .\System\Timer.h
